@@ -8,6 +8,7 @@ module.exports = function(io) {
 
   io.sockets.on('connection', function (socket) {
   	console.log("user logged");
+    io.emit('postItArray' ,postItArray);
 
   	socket.on('create', function(data){
   		console.log('postIt added in arra ' + postItArray);
