@@ -6,22 +6,17 @@ var postItArray = [];
 
 module.exports = function(io) {
 
-  var send = function(socket, message) {
-    socket.emit('message', message);
-    console.log("emitted message");
-  };
-
-  var sendStatus = function(socket, string) {
-    socket.emit('status', string);
-    console.log("emitted status");
-  };
-
   io.sockets.on('connection', function (socket) {
   	console.log("user logged");
+
   	socket.on('create', function(data){
   		console.log('postIt added in arra ' + postItArray);
   		postItArray.push(data);
   		io.emit('postItArray' ,postItArray);
   	});
+
+    socket.on('submitPostit',function(data){
+      socket.broadcast.emit('submitPostit',{data:data});
+    });
   });
 };
