@@ -7,6 +7,8 @@
   src: ' ../fonts/Roboto/Roboto-Regular.ttf';
 }
 
+:focus {outline:none;}
+
 .postit{
   border:1px solid #ccc;
   background-color: #ffa;
@@ -14,4 +16,10 @@
 }
 .postit textarea{
   background-color: #ffa;
+  resize:none;
+  display:block;
+  width:100%;
+  border:none;
+  outline:none
+
 }

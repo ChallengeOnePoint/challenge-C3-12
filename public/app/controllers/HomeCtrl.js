@@ -23,7 +23,6 @@ app.controller('HomeCtrl', function($scope, socket) {
 
 
   $scope.submitPostit = function() {
-    console.log('clicked');
     socket.emit('submitPostit', $scope.postitTitle);
 
     return false;
