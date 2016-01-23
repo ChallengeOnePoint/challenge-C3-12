@@ -4,7 +4,7 @@
 
 var postItArray = [];
 
-module.exports = function() {
+module.exports = function(io) {
 
   var send = function(socket, message) {
     socket.emit('message', message);
@@ -15,13 +15,13 @@ module.exports = function() {
     socket.emit('status', string);
     console.log("emitted status");
   };
-  io.on('connection', function(socket) {
-    logger.info('connected to db chat');
 
-    socket.on('create', function(data){
+  io.sockets.on('connection', function (socket) {
+  	console.log("user logged");
+  	socket.on('create', function(data){
   		console.log('postIt added in arra ' + postItArray);
   		postItArray.push(data);
-  		io.emit('postItArray', postItArray);
+  		io.emit('postItArray' ,postItArray);
   	});
   });
 };
