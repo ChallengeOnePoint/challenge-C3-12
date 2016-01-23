@@ -7,3 +7,11 @@
   src: ' ../fonts/Roboto/Roboto-Regular.ttf';
 }
 
+.postit{
+  border:1px solid #ccc;
+  background-color: #ffa;
+  width: 300px;
+}
+.postit textarea{
+  background-color: #ffa;
+}

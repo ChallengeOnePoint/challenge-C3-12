@@ -1,3 +1,8 @@
 <div class="row">
-	<button type="button" class="btn btn-success" ng-click="createPostIt()">Success</button>
+  <button type="button" class="btn btn-success" ng-click="createPostIt()">Success</button>
+  <div class="postit">
+    <textarea name="textarea" rows="10" cols="50" ng-model="postitTitle">{{postitTitle}}</textarea>
+    <p>{{newMessage}}</p>
+    <button ng-click="submitPostit()" class="postit-submit" type="button" class="postit-submit">Submit</button>
+  </div>
 </div>
