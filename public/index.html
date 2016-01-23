@@ -1,13 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 	<head>
-		<title>PostIt</title>
+		<title>Article Editor</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<!-- build:css asset/css/style.min.css -->
+	    <!-- Bootstrap core CSS -->
+	    <link href="vendor/bootstrap-3.3.6/dist/css/bootstrap.css" rel="stylesheet">
+
+	    <!-- Main Css -->
+	    <link rel="stylesheet" type="text/css" href="asset/css/main.css">
+
+	    <!-- Icons -->
+	    <link rel="stylesheet" type="text/css" href="asset/css/font-awesome.min.css">
+	<!-- endbuild -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 	</head>
 	<body>
-		<h1>Bonjour</h1>
-		<script src="/socket.io/socket.io.js"></script>
-		<script type="text/javascript">
-			var socket = io();
-		</script>
+
+	<div class="container">
+      	<div ng-controller="HeaderCtrl">
+      		<ng-include src="templateHeader"/>
+    	</div>
+
+		<!-- content -->
+		<div ng-view></div>
+
+    </div>
+
+		<!-- build:js app.min.js -->
+			<!-- vendor -->
+			<script type="text/javascript" src="vendor/jquery-2.1.4.min.js"></script>
+			<script type="text/javascript" src="vendor/angular-1.4.8/angular.min.js"></script>
+			<script type="text/javascript" src="vendor/angular-1.4.8/angular-route.min.js"></script>
+			<script type="text/javascript" src="vendor/angular-1.4.8/angular-messages.min.js"></script>
+			<script type="text/javascript" src="vendor/angular-1.4.8/angular-animate.min.js"></script>
+			<script type="text/javascript" src="vendor/bootstrap-3.3.6/dist/js/bootstrap.min.js"></script>
+
+
+
+			<script src="app/app.js"></script>
+			<script src="app/config/router.js"></script>
+			<script src="app/controllers/HeaderCtrl.js"></script>
+			<script src="app/controllers/HomeCtrl.js"></script>
+			<script src="app/shared/directives/equalHeight.js"></script>
+			<script src="app/shared/filters/truncate.js"></script>
+			<script src="/socket.io/socket.io.js"></script>
+			
+			<script type="text/javascript">
+				var socket = io();
+			</script>
+		<!-- endbuild -->
 	</body>
 </html>
