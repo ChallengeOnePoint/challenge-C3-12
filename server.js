@@ -6,9 +6,15 @@ var app     = express(),
 
 app.use(express.static(__dirname +'/public'));
 
+var postItArray = [];
 
 // handles socket stuff
 io.sockets.on('connection', function (socket) 
 {
 	console.log("user logged");
+	socket.on('create', function(data){
+		console.log('postIt added in arra ' + postItArray);
+		postItArray.push(data);
+		io.emit('postItArray' ,postItArray);
+	});
 });
