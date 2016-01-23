@@ -1,0 +1,23 @@
+{
+  "name": "challenge-c3-12",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChallengeOnePoint/challenge-C3-12.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChallengeOnePoint/challenge-C3-12/issues"
+  },
+  "homepage": "https://github.com/ChallengeOnePoint/challenge-C3-12#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
